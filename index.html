@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <script src="https://kit.fontawesome.com/df5ef303a0.js" crossorigin="anonymous"></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Montserrat:wght@500&display=swap');
+    
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root{
+      --color-gray:hsl(0, 0%, 59%);
+      --color-paleBlue:hsl(223, 100%, 88%);
+      --color-blue:hsl(223, 87%, 63%);
+      --color-lightRed:hsl(354, 100%, 66%);
+      --color-VdarkBlue:hsl(209, 33%, 12%);
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .logo{
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .bigText{
+      color:var(--color-gray) ;
+      font-size: 2.5rem ;
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 100;
+      text-align: center;
+      margin-top: 2.3rem;
+    }
+
+    b{
+    color: black;
+    }
+
+    .smallText{
+      text-align: center;
+      margin-top: 1.3rem;
+      font-size: 18px;
+      font-family: 'Libre Franklin', sans-serif;
+      color: var(--color-VdarkBlue);
+    }
+
+    .newsletter{
+      text-align: center;
+      margin-top: 1.8rem;
+    }
+
+    input{
+      border: 1px solid var(--color-paleBlue) ;
+      border-radius: 20px;
+      padding: 0.8rem 1.3rem;
+      width: 350px;
+    }
+    
+    ::placeholder{
+    color: var(--color-paleBlue);
+    }
+
+    input:focus{
+      outline: none;
+    }
+
+    button{
+      background-color: var(--color-blue);
+      color: white;
+      font-size: 15px;
+      padding: 0.8rem 2.7rem;
+      border: transparent;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-left: 0.7rem;
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1) ;
+    }
+
+    #error{
+      color: var(--color-lightRed);
+      font-size: 11px;
+      font-family: 'Libre Franklin', sans-serif;
+      margin-top: 0.5rem;
+    }
+
+    .form{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;  
+    }
+    .input #error{
+      text-align:start;
+      margin-left: 23px;
+    }
+
+    .dashboardimg{
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .img1{
+      width: 500px;
+    }
+
+    .socials{
+      text-align: center;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .icons{
+      gap: 1rem;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  
+    .icon-border{
+      border: 1px solid lightgray;
+      border-radius: 50%;
+      width:26px;
+      height: 26px;
+      padding: 0.3rem;
+    }
+
+    .socials a{
+      color: var(--color-blue);
+    }
+
+    .icon-border:hover{
+      background-color: var(--color-blue);
+      color: white;
+      border: transparent;
+      cursor: pointer;
+    }
+
+    .copyright{
+      color: var(--color-gray);
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 10px;
+    }
+
+    @media (max-width:514px){
+      .bigText{
+        font-size: 1.5rem;
+      }
+
+      .smallText{
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .form{
+        flex-direction: column;
+        align-items: center;
+      }
+      .input #error{
+        text-align:center;
+        margin-right: 23px;
+    }
+
+      input, button{
+        width:300px;
+        margin:0.4rem;
+      }
+
+      .img1{
+        width: 330px;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="logo">
+    <img src="images/logo.svg" alt="page logo">
+  </div>
+  <h1 class="bigText">We are launching <b>soon!</b></h1>
+
+  <p class="smallText">Subscribe and get notified</p>
+
+  <div class="newsletter">
+      <form class="form" name="form1"  action="#" >
+          <div class="input">
+            <input type="text"  id="email" name="text1" placeholder="Your email address...">
+            <p id="error"></p>
+          </div>
+          <button type="submit" name="validate" value="Validate" id="btn" onclick="showError(document.form1.text1)">Notify Me</button> 
+      </form>
+    
+  </div>
+
+  <div class="dashboardimg">
+    <img src="images/illustration-dashboard.png" class="img1" alt="dashboard image">
+  </div>
+
+  <div class="socials">
+    <div class="icons">
+      <a class="icon-border" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a class="icon-border" href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a class="icon-border" href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+  </div>
+</main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/fahmisboui">Fahmi Sboui</a>.
+    </p>
+  </footer>
+
+  <script src="js.js"></script>
+</body>
+</html>
